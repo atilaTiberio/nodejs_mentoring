@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <% include partials/datos.ejs%>
+    <form action="/alta" method="POST">
+      <label>Id</label>
+      <input type="text" name="id"/> <br/>
+      <label>Username</label>
+      <input type="text" name="username"/> <br/>
+      <label>Password</label>
+      <input type="password" name="password"/> <br/>
+      <label>Email</label>
+      <input type="text" name="email"/><br/>
+        <input type="submit" value="Enviar"/>
+    </form>
+
+<%#  "&lt;h3&gt;" %>
+
+  </body>
+</html>
