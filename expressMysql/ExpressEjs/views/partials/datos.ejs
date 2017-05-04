@@ -1,0 +1,18 @@
+<table>
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Actualizar</th>
+            <th>Borra</th>
+        </tr>
+    </thead>
+    <tbody>
+    <% datos.forEach((item) => { %>
+    <tr>
+        <td><%= item.nombre%>  <%=item.apellido %></td>
+        <td><a href="/usuarios/actualizar/<%= item.id%>">actualizar</a></td>
+        <td><a href="/usuarios/borrar/<%= item.id%>">borrar</a></td>
+    <tr/>
+    <% })%>
+    </tbody>
+</table>

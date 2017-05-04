@@ -1,0 +1,11 @@
+<form action="/usuarios/actualizar/<%=fila.id%>" method="POST">
+    <label>Id</label>
+    <br/>
+    <label>Username</label>
+    <input type="text" name="username" value="<%=fila.username%>"/> <br/>
+    <label>Password</label>
+    <input type="password" name="password"/> <br/>
+    <label>Email</label>
+    <input type="text" name="email" value="<%=fila.email%>"/><br/>
+    <input type="submit" value="Enviar"/>
+</form>
