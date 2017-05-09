@@ -1,0 +1,31 @@
+<html><head></head>
+
+
+<body>
+<div style="align: center;">
+    <a href="<%=contextPath%>/alta">Alta de Usuario</a>
+
+<table><thead><th>username</th><th>password</th><th>email</th><th>Phone</th><th colspan="2">Operacion</th></thead>
+<tbody>
+    <% data.forEach(function(item){%>
+
+        <tr>
+
+            <td><%=item.name%></td>
+            <td><%=item.password%></td>
+            <td><%=item.email%></td>
+            <td><%=item.phone%></td>
+
+        <td><a href="<%=contextPath%>/delete/<%=item.id%>" >Borrar</a></td>
+        <td><a href="<%=contextPath%>/actualizar/<%=item.id%>" >Actualizar</a></td></tr>
+    <%});%>
+
+</tbody>
+
+</table>
+
+</div>
+</body>
+
+
+</html>
