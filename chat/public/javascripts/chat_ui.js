@@ -1,9 +1,23 @@
 /**
  * Created by hiturbe on 06/03/17.
  */
+ 
 function divEscapedContentElement(message){
 
     return $('<div></div>').text(message);
+}
+
+function constructMessage(textMessage,sender){
+  
+  var newElement=$('<div></div>').text(textMessage);
+  var newString = newElement.html().replace(replaceRegExp,function(val){
+    console.log(val)
+    return "<img class='emoticon' src='"+emoticons[val]+"' />"
+  })
+  if(!sender){
+    newString = '<div>'+newString+'</div>'
+  }
+  return newString
 }
 
 function divSystemContentElement(message){
@@ -21,7 +35,7 @@ function processUserInput(chatApp,socket){
         }
     }else{
         chatApp.sendMessage($('#room').text(),message);
-        $('#messages').append(divEscapedContentElement(message));
+        $('#messages').append(constructMessage(message,true));
         $('#messages').scrollTop($('#messages').prop('scrollHeight'));
     }
     $('#send-message').val('');
@@ -31,6 +45,18 @@ function processUserInput(chatApp,socket){
 var socket=io.connect();
 
 $(document).ready(function(){
+    window.emoticons={}
+    emoticons[':)']='/images/smile.png'
+    emoticons[':D']='/images/smile-2.png'
+    emoticons[":'D"]='/images/smile-cry.png'
+    emoticons[":')"]='/images/smile-cry.png'
+    
+    var newRegExpArr=[]
+    for( var val in emoticons){
+      val = val.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&")
+      newRegExpArr.push("("+val+")")      
+    }
+    window.replaceRegExp=new RegExp(newRegExpArr.join('|'), 'g')
     var chatApp=new Chat(socket);
     socket.on('nameResult',function(result){
         var message;
@@ -49,10 +75,10 @@ $(document).ready(function(){
 
     });
 
-    socket.on('message',function(message){
-        var newElement=$('<div></div>').text(message.text);
-
-        $('#messages').append(newElement);
+    socket.on('message',function(message){        
+        
+        
+        $('#messages').append(constructMessage(message.text,false));
     });
 
     socket.on('rooms',function(rooms){

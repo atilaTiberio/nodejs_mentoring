@@ -44,3 +44,8 @@ a {
 #help {
   font: 10px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
+
+img.emoticon{
+  width: 24px;
+  height: 24px;
+}
