@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require("promise-mysql");
+var moment = require('moment');
 
 var pool=mysql.createPool({
     connectionLimit: 10,
@@ -45,6 +46,7 @@ router.get('/update/:id',function(req,res,next){
 });
 
 router.post('/update/:id',function(req,res,next){
+  req.body.updated_at = moment().format('YYYY-MM-DD HH:mm:ss');
   pool.query("UPDATE expenses SET ? WHERE id="+req.params.id,req.body)
     .then(function(result){
       res.redirect("/expenses");
