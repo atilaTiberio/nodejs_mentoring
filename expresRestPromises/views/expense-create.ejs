@@ -1,0 +1,12 @@
+<h1>Add Expense entry</h1>
+<form action="<%=contextPath%>" method="POST">
+
+    <label for="amount">Amount: $</label><input type="text" name="amount" placeholder="0.00"/><br/>
+
+    <label for="note">Note</label> <input type="text" name="note" placeholder="Note"/><br/>
+
+    <input type="hidden" name="usersid" value='1'/>
+
+    <input type="submit" value="save"/>
+
+</form>

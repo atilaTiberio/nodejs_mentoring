@@ -1,0 +1,30 @@
+<html><head></head>
+
+
+<body>
+<div style="align: center;">
+    <a href="<%=contextPath%>/create">New Expense</a>
+
+<table><thead><th>Note</th><th>Amount</th><th>email</th><th>Phone</th><th colspan="2">Operacion</th></thead>
+<tbody>
+    <% data.forEach(function(item){%>
+
+        <tr>
+
+            <td><%=item.note%></td>
+            <td>$ <%=item.amount%></td>
+            <td><%=item.created_at%></td>
+
+        <td><a href="<%=contextPath%>/delete/<%=item.id%>" >Delete</a></td>
+        <td><a href="<%=contextPath%>/update/<%=item.id%>" >Update</a></td></tr>
+    <%});%>
+
+</tbody>
+
+</table>
+
+</div>
+</body>
+
+
+</html>
