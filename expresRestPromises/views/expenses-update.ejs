@@ -1,10 +1,31 @@
-<h1>Update Expense entry</h1>
-<form action="<%=contextPath%>" method="POST">
+<% include _headers %>
 
-    <label for="amount">Amount: $</label><input type="text" name="amount" placeholder="0.00" value="<%=item.amount%>"/><br/>
+<h2>Update Expense</h2>
+<div class="form-horizontal" role="form">
+  <form action="<%=contextPath%>" method="POST">
 
-    <label for="note">Note</label> <input type="text" name="note" placeholder="Note" value="<%=item.note%>"/><br/>
-    <!-- <input type="hidden" name="usersid" value='1'/> -->
-    <input type="submit" value="save"/>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="amount">Amount: </label>
+      <div class="col-sm-10">
+        <input class="form-control" type="text" id="amount" name="amount" placeholder="0.00" value="<%=item.amount%>"/>
+      </div>
+    </div>
 
-</form>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="note">Note:</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="text" id="note" name="note" placeholder="Expense Description" value="<%=item.note%>"/>
+      </div>
+    </div>
+
+    <input type="hidden" name="usersid" value='1'/>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <input class="btn btn-primary" type="submit" value="save"/>
+      </div>
+    </div>
+
+  </form>
+</div>
+<% include _footer %>

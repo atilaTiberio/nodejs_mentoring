@@ -30,7 +30,7 @@ CREATE TABLE `expenses` (
 
 INSERT INTO `users` VALUES (1,'Carlos Colorado','carlos.colorado@internetbrands.com','pwd123','5554443332','2017-05-15 21:00:00','2017-05-15 21:00:00');
 
-INSERT INTO `expenses` VALUES (1,1,'Netflix','99.99','2017-05-15 21:00:00','2017-05-15 21:00:00'), (2,1,'Gasolin','500.00','2017-05-15 21:00:00','2017-05-15 21:00:00');
+INSERT INTO `expenses` VALUES (1,1,'Netflix','99.99','2017-05-15 21:00:00','2017-05-15 21:00:00'), (2,1,'Gasolina','500.00','2017-05-15 21:00:00','2017-05-15 21:00:00');
 
 GRANT ALL PRIVILEGES on nodejs_ccolorado.* to 'hiturbe'@'%' IDENTIFIED BY 'Garcia@1';
 GRANT ALL PRIVILEGES on nodejs_ccolorado.* to 'ccolorado'@'%' IDENTIFIED BY 'qwerty';

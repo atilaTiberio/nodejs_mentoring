@@ -1,11 +1,10 @@
-<html><head></head>
+<% include _headers %>
 
-
-<body>
+<h2>Usuarios</h2>
 <div style="align: center;">
-    <a href="<%=contextPath%>/alta">Alta de Usuario</a>
+    <a class="btn btn-primary" href="<%=contextPath%>/alta"><span class="glyphicon glyphicon-plus-sign"></span> Alta de Usuario</a>
 
-<table><thead><th>username</th><th>password</th><th>email</th><th>Phone</th><th colspan="2">Operacion</th></thead>
+<table class="table"><thead><th>username</th><th>password</th><th>email</th><th>Phone</th><th colspan="2">Operacion</th></thead>
 <tbody>
     <% data.forEach(function(item){%>
 
@@ -16,8 +15,8 @@
             <td><%=item.email%></td>
             <td><%=item.phone%></td>
 
-        <td><a href="<%=contextPath%>/delete/<%=item.id%>" >Borrar</a></td>
-        <td><a href="<%=contextPath%>/actualizar/<%=item.id%>" >Actualizar</a></td></tr>
+        <td><a class="btn btn-danger" href="<%=contextPath%>/delete/<%=item.id%>" >Borrar</a></td>
+        <td><a class="btn btn-primary" href="<%=contextPath%>/actualizar/<%=item.id%>" >Actualizar</a></td></tr>
     <%});%>
 
 </tbody>
@@ -29,3 +28,5 @@
 
 
 </html>
+
+<% include _footer %>

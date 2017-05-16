@@ -1,15 +1,40 @@
+<% include _headers %>
+<h2>Actualizar</h2>
+<div class="form-horizontal" role="form">
 <form action="<%=contextPath%>" method="POST">
 
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="name">name</label>
+      <div class="col-sm-10">
+    <input class="form-control" value="<%=item.name%>" type="text" name="name" placeholder="name"/><br/>
+      </div>
+      </div>
 
-    <label for="name">name</label>
-    <input value="<%=item.name%>" type="text" name="name" placeholder="name"/><br/>
+    <label class="control-label col-sm-2" for="email">Email</label>
+      <div class="col-sm-10">
+    <input class="form-control" value="<%=item.email%>" type="text" name="email" placeholder="email"/><br/>
+      </div>
+      </div>
 
-    <label for="email">Email</label>
-    <input value="<%=item.email%>" type="text" name="email" placeholder="email"/><br/>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="phone">phone</label>
+      <div class="col-sm-10">
+        <input class="form-control" value="<%=item.phone%>"  type="phone" name="phone" placeholder="phone"/><br/>
+      </div>
+    </div>
 
-    <label for="password">Password</label>
-    <input value="<%=item.password%>" type="password" name="password" placeholder="password"/><br/>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="password">Password</label>
+      <div class="col-sm-10">
+        <input class="form-control" value="<%=item.password%>" type="password" name="password" placeholder="password"/><br/>
+      </div>
+    </div>
 
-    <input type="submit" value="Guardar"/>
-    
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <input class="btn btn-primary" type="submit" value="Guardar"/>
+      </div>
+    </div>
+
 </form>
+<% include _footer %>
