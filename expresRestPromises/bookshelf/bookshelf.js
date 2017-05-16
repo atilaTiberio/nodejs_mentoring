@@ -4,7 +4,7 @@ var dbConfig = {
         host: 'localhost',
         user: 'hiturbe',
         password: 'Garcia@1',
-        database:'legacydb',
+        database:'nodejs_ccolorado',
         charset: 'utf8'
     }
 };

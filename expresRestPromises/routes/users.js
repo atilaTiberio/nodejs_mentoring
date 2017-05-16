@@ -7,7 +7,7 @@ var pool=mysql.createPool({
     host: 'localhost',
     user: 'hiturbe',
     password: 'Garcia@1',
-    database:'legacydb'
+    database:'nodejs_ccolorado'
 });
 
 /* GET users listing. */
