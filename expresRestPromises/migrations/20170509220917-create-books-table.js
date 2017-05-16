@@ -15,11 +15,18 @@ exports.setup = function(options, seedLink) {
 };
 
 exports.up = function(db) {
-  return null;
+    return db.createTable('books', {
+        id: { type: 'int', primaryKey: true },
+        name: 'string',
+        description: 'string',
+        edition: 'int',
+        pages: 'int',
+        genre: 'string'
+    });
 };
 
 exports.down = function(db) {
-  return null;
+    return db.dropTable('users');
 };
 
 exports._meta = {

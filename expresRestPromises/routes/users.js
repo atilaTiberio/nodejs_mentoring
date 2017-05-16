@@ -5,8 +5,8 @@ var mysql = require("promise-mysql");
 var pool=mysql.createPool({
     connectionLimit: 10,
     host: 'localhost',
-    user: 'hiturbe',
-    password: 'Garcia@1',
+    user: 'root',
+    password: 'admin',
     database:'legacydb'
 });
 
@@ -26,6 +26,7 @@ router.get('/', function(req, res, next) {
 
 
 });
+
 router.get('/alta',function (req,res,next) {
 
     res.render("alta",{contextPath:req.originalUrl});

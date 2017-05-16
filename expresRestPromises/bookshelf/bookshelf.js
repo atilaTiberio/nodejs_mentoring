@@ -2,8 +2,8 @@ var dbConfig = {
     client: 'mysql',
     connection: {
         host: 'localhost',
-        user: 'hiturbe',
-        password: 'Garcia@1',
+        user: 'root',
+        password: 'admin',
         database:'legacydb',
         charset: 'utf8'
     }
