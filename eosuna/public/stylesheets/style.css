@@ -1,0 +1,25 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+.title{
+  display:inline-block;
+}
+span.delete{
+  background-color: red;
+  color: whitesmoke;
+  cursor: pointer;
+}
+span.edit{
+  background-color: #207a34;
+  color: whitesmoke;
+  cursor: pointer;
+}
+span.edit a{
+  color:white;
+
+}

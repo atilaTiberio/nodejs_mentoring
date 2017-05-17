@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+  </head>
+  <body>
+
+    <a href="/posts/create">Create new post</a>
+    <h1>My Blog </h1>
+    <% posts.forEach(function(item){ %>
+    <hr>
+    <div>
+      <h4 class="title"><%=item.title %></h4>
+      <span class="edit" data-id="<%= item.id%>"><a href="/posts/edit/<%= item.id%>">E</a></span>
+      <span class="delete" data-id="<%= item.id %>" data-title="<%= item.title%>">X</span>
+    </div>
+    <div class="title"><%= item.content%></div>
+    <% }) %>
+
+  </body>
+<script >
+$(document).ready(function(){
+	$(".delete").click(function(){
+		if(confirm("seguro de que quieres eliminar el post "+$(this).data('title'))){
+			window.location.replace('/posts/delete/'+$(this).data('id'))
+        }else{
+
+        }
+    })
+})
+</script>
+</html>
