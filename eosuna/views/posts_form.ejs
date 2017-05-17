@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+<a href="/posts/">Regresar</a>
+
+<form method="POST" action="<%= locals.post ? '/posts/edit/'+post.id:''%>" style="margin-top:20px;">
+    <label for="title">Title</label>
+
+    <input type="text" name="title" id="title" value="<%= locals.post ? post.title:''%>"/>
+    <br/>
+    <label for="content">Content</label><br/>
+    <textarea name="content" id="content"><%= locals.post ? post.content:''%></textarea>
+    <br/>
+    <button><%= locals.post ? 'Editar':'Crear'%> post</button>
+</form>
+
+</body>
+</html>
